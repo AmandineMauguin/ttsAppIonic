@@ -1,17 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title> Speech config </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  
+  <ion-list>
+    <ion-list-header> Settings</ion-list-header>
+    <ion-item>
+      <ion-label> Language</ion-label>
+      <ion-select (ionChange)="saveLocale($event)" [(ngModel)]="locale">
+        <ion-select-option value="fr-FR">French</ion-select-option>
+        <ion-select-option value="en-GB">English</ion-select-option>
+        <ion-select-option value="es-ES">Spanish</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label> Speed</ion-label>
+      <ion-range
+        (ionChange)="saveRate($event)"
+        [(ngModel)]="rate"
+        value="2"
+        min="0"
+        max="3"
+        pin="true"
+        step="0.25"
+        snaps="true"
+        ticks="true"
+      >
+        <ion-label slot="start"> 0</ion-label>
+        <ion-label slot="end"> 3</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list>
 </ion-content>
