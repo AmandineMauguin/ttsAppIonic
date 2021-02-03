@@ -1,0 +1,7 @@
+{
+  "name": "ttsApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
